@@ -1,0 +1,16 @@
+allowBuilds:
+  '@parcel/watcher': set this to true or false
+  esbuild: set this to true or false
+  lmdb: set this to true or false
+  msgpackr-extract: set this to true or false
+minimumReleaseAgeExclude:
+  - '@sec-ant/readable-stream@0.4.1'
+  - '@simple-libs/stream-utils@1.2.0'
+  - import-from-esm@2.0.0
+  - index-to-position@1.1.0
+  - json-with-bigint@3.5.3
+  - make-asynchronous@1.0.1
+  - read-package-up@11.0.0
+  - read-package-up@12.0.0
+  - tagged-tag@1.0.0
+  - less@4.6.4

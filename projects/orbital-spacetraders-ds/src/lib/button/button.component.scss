@@ -1,0 +1,112 @@
+.st-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--st-border);
+  background: var(--st-surface);
+  font: inherit;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    filter 180ms ease;
+}
+
+.st-button::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 0.45rem;
+  pointer-events: none;
+  border: 1px solid var(--st-border-inner);
+}
+
+.st-button:hover:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+  filter: brightness(1.05);
+}
+
+.st-button:focus-visible {
+  outline: 3px solid var(--st-focus-ring);
+  outline-offset: 2px;
+}
+
+.st-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.st-button--sm {
+  min-height: 2.25rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.78rem;
+}
+
+.st-button--md {
+  min-height: 2.75rem;
+  padding: 0.65rem 0.95rem;
+  font-size: 0.86rem;
+}
+
+.st-button--lg {
+  min-height: 3.25rem;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.92rem;
+}
+
+.st-button--primary.st-button--brand {
+  background: linear-gradient(
+    135deg,
+    var(--st-text-brand),
+    color-mix(in srgb, var(--st-brand) 48%, var(--st-panel-elevated))
+  );
+  color: #05283a;
+  box-shadow:
+    0 0 0 1px var(--st-glow-brand),
+    0 14px 24px rgba(6, 44, 65, 0.35);
+}
+
+.st-button--primary.st-button--accent {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--st-accent) 76%, white),
+    color-mix(in srgb, var(--st-accent) 52%, var(--st-panel-elevated))
+  );
+  color: #2f1403;
+  box-shadow:
+    0 0 0 1px var(--st-glow-accent),
+    0 14px 24px rgba(78, 38, 10, 0.4);
+}
+
+.st-button--primary.st-button--neutral {
+  background: linear-gradient(
+    130deg,
+    var(--st-neutral),
+    color-mix(in srgb, var(--st-neutral) 65%, #2f3650)
+  );
+  color: #11182c;
+  box-shadow:
+    0 0 0 1px var(--st-glow-neutral),
+    0 14px 24px rgba(17, 24, 44, 0.4);
+}
+
+.st-button--secondary {
+  background: var(--st-surface-subtle);
+  border-color: var(--st-border-brand);
+  color: var(--st-ink);
+}
+
+.st-button--ghost {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--st-ink-muted) 40%, transparent);
+  color: color-mix(in srgb, var(--st-brand) 66%, var(--st-ink-muted));
+}

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Hairline&family=Saira:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --st-canvas: #050914;
+  --st-panel: #0d1424;
+  --st-panel-elevated: #121c31;
+  --st-brand: #5ee7ff;
+  --st-accent: #ff9842;
+  --st-neutral: #96a8cf;
+  --st-ink: #eaf3ff;
+  --st-ink-strong: #f4f8ff;
+  --st-ink-muted: #90a5ca;
+  --st-line: rgba(94, 231, 255, 0.24);
+  --st-focus-ring: rgba(94, 231, 255, 0.48);
+  --st-radius-pill: 999px;
+  --st-radius-lg: 0.9rem;
+  --st-radius-xl: 1.25rem;
+  --st-shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.34);
+  --st-shadow-panel: 0 24px 60px rgba(2, 5, 10, 0.6);
+  --st-font-body: 'Saira', 'Segoe UI Variable', 'Segoe UI', sans-serif;
+  --st-font-display: 'Bungee Hairline', 'Segoe UI Variable', 'Segoe UI', sans-serif;
+
+  --st-surface: color-mix(in srgb, var(--st-panel-elevated) 88%, transparent);
+  --st-surface-subtle: color-mix(in srgb, var(--st-panel) 84%, transparent);
+  --st-surface-strong: color-mix(in srgb, var(--st-panel-elevated) 94%, transparent);
+  --st-surface-canvas: color-mix(in srgb, var(--st-canvas) 15%, var(--st-panel-elevated));
+  --st-surface-panel: color-mix(in srgb, var(--st-panel) 75%, var(--st-canvas));
+  --st-surface-panel-soft: color-mix(in srgb, var(--st-canvas) 80%, var(--st-panel));
+  --st-surface-brand: color-mix(in srgb, var(--st-brand) 12%, transparent);
+  --st-surface-brand-strong: color-mix(in srgb, var(--st-brand) 30%, var(--st-panel-elevated));
+
+  --st-border: color-mix(in srgb, var(--st-line) 85%, transparent);
+  --st-border-soft: color-mix(in srgb, var(--st-line) 72%, transparent);
+  --st-border-subtle: color-mix(in srgb, var(--st-line) 58%, transparent);
+  --st-border-brand: color-mix(in srgb, var(--st-brand) 36%, var(--st-line));
+  --st-border-brand-strong: color-mix(in srgb, var(--st-brand) 52%, var(--st-line));
+  --st-border-inner: rgba(255, 255, 255, 0.06);
+
+  --st-text-brand: color-mix(in srgb, var(--st-brand) 72%, white);
+  --st-text-brand-strong: color-mix(in srgb, var(--st-brand) 74%, white);
+  --st-text-muted-shadow: rgba(94, 231, 255, 0.16);
+
+  --st-focus-brand-soft: 0 0 0 3px color-mix(in srgb, var(--st-brand) 22%, transparent);
+  --st-focus-accent-soft: 0 0 0 3px color-mix(in srgb, var(--st-accent) 22%, transparent);
+  --st-focus-neutral-soft: 0 0 0 3px color-mix(in srgb, var(--st-neutral) 22%, transparent);
+
+  --st-glow-brand-soft: rgba(94, 231, 255, 0.08);
+  --st-glow-brand: rgba(94, 231, 255, 0.3);
+  --st-glow-brand-strong: rgba(94, 231, 255, 0.48);
+  --st-glow-accent: rgba(255, 152, 66, 0.34);
+  --st-glow-neutral: rgba(150, 168, 207, 0.32);
+  --st-code-bg: #08111f;
+  --st-code-fg: #d7efff;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--st-font-body);
+  color: var(--st-ink);
+  background:
+    radial-gradient(circle at 10% -10%, var(--st-surface-brand) 0%, transparent 42%),
+    radial-gradient(
+      circle at 92% 8%,
+      color-mix(in srgb, var(--st-accent) 14%, transparent),
+      transparent 30%
+    ),
+    linear-gradient(180deg, #060b18 0%, var(--st-canvas) 70%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--st-glow-brand-soft) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--st-brand) 5%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(circle at center, black 45%, transparent 100%);
+  opacity: 0.28;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--st-font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.st-surface {
+  background: var(--st-surface);
+  border: 1px solid var(--st-border);
+  box-shadow: var(--st-shadow-soft);
+}
+
+.st-surface-strong {
+  background: var(--st-surface-strong);
+  border: 1px solid var(--st-border-soft);
+  box-shadow: var(--st-shadow-panel);
+}

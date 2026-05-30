@@ -6,5 +6,31 @@
   },
   "newProjectRoot": "projects",
   "projects": {
+    "orbital-spacetraders-ds": {
+      "projectType": "library",
+      "root": "projects/orbital-spacetraders-ds",
+      "sourceRoot": "projects/orbital-spacetraders-ds/src",
+      "prefix": "st",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/orbital-spacetraders-ds/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/orbital-spacetraders-ds/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/orbital-spacetraders-ds/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }
