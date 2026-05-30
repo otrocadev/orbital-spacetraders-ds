@@ -23,13 +23,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22.13.0
           registry-url: https://registry.npmjs.org
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 11.4.0
+
+      - name: Validate publish token
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "NPM_TOKEN is missing. Add it in GitHub repo settings under Actions secrets."
+            exit 1
+          fi
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile --config.minimum-release-age=0
