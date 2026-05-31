@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-@Component({
-  selector: 'st-orbital-spacetraders-ds',
-  imports: [],
-  template: ` <p>orbital-spacetraders-ds works!</p> `,
-  styles: ``,
+@NgModule({
+  imports: [CommonModule],
+  declarations: [],
+  exports: [],
 })
 export class OrbitalSpacetradersDs {}

@@ -1,0 +1,21 @@
+<section [class]="classes()">
+  @if (eyebrow() || title() || description()) {
+    <header class="ds-surface__header">
+      @if (eyebrow()) {
+        <p class="ds-surface__eyebrow">{{ eyebrow() }}</p>
+      }
+
+      @if (title()) {
+        <h2 class="ds-surface__title">{{ title() }}</h2>
+      }
+
+      @if (description()) {
+        <p class="ds-surface__description">{{ description() }}</p>
+      }
+    </header>
+  }
+
+  <div class="ds-surface__content">
+    <ng-content />
+  </div>
+</section>

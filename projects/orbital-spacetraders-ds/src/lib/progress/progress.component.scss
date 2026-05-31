@@ -1,0 +1,69 @@
+.st-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.st-progress__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.st-progress__label {
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--st-ink-muted);
+}
+
+.st-progress__value {
+  color: var(--st-ink-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.st-progress__track {
+  position: relative;
+  width: 100%;
+  height: 0.45rem;
+  background: color-mix(in srgb, var(--st-panel) 70%, var(--st-canvas));
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.st-progress__bar {
+  position: absolute;
+  inset-left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.3rem;
+  transition: width 280ms ease;
+
+  &--brand {
+    background: linear-gradient(
+      90deg,
+      var(--st-brand),
+      color-mix(in srgb, var(--st-brand) 72%, white)
+    );
+    box-shadow: 0 0 12px color-mix(in srgb, var(--st-brand) 35%, transparent);
+  }
+
+  &--accent {
+    background: linear-gradient(
+      90deg,
+      var(--st-accent),
+      color-mix(in srgb, var(--st-accent) 72%, white)
+    );
+    box-shadow: 0 0 12px color-mix(in srgb, var(--st-accent) 35%, transparent);
+  }
+
+  &--neutral {
+    background: linear-gradient(
+      90deg,
+      var(--st-neutral),
+      color-mix(in srgb, var(--st-neutral) 72%, white)
+    );
+    box-shadow: 0 0 12px color-mix(in srgb, var(--st-neutral) 35%, transparent);
+  }
+}

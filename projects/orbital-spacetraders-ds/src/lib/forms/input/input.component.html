@@ -1,0 +1,18 @@
+<label class="st-input" [class.st-input--disabled]="disabled()">
+  @if (label()) {
+    <span class="st-input__label">{{ label() }}</span>
+  }
+  <input
+    [class]="fieldClasses()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    [value]="internalValue()"
+    (input)="onInput($event)"
+  />
+  @if (hintText()) {
+    <span class="st-input__hint" [class.st-input__hint--error]="hasError()">
+      {{ hintText() }}
+    </span>
+  }
+</label>

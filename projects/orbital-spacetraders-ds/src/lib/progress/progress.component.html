@@ -1,0 +1,13 @@
+<div class="st-progress">
+  @if (label()) {
+    <div class="st-progress__header">
+      <span class="st-progress__label">{{ label() }}</span>
+      @if (showPercent()) {
+        <span class="st-progress__value">{{ percent() }}%</span>
+      }
+    </div>
+  }
+  <div class="st-progress__track">
+    <div [class]="barClasses()" [style.width.%]="percent()"></div>
+  </div>
+</div>

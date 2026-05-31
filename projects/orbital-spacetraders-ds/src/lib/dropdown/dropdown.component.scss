@@ -1,0 +1,111 @@
+.st-dropdown {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 5;
+}
+
+.st-dropdown__trigger {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.75rem;
+  align-items: center;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--st-border);
+  border-radius: 0.55rem;
+  background: var(--st-surface);
+  color: var(--st-ink);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    border-color: var(--st-border-brand);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--st-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.st-dropdown__label {
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.st-dropdown__summary {
+  grid-column: 1;
+  color: var(--st-ink-muted);
+  font-size: 0.92rem;
+}
+
+.st-dropdown__chevron {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--st-brand);
+}
+
+.st-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.5rem;
+  border: 1px solid var(--st-border);
+  border-radius: 0.5rem;
+  background: var(--st-surface-canvas);
+  box-shadow: var(--st-shadow-panel);
+}
+
+.st-dropdown__item {
+  display: grid;
+  gap: 0.1rem;
+  width: 100%;
+  padding: 0.8rem 0.85rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: var(--st-ink);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--st-surface-brand);
+    outline: none;
+  }
+}
+
+.st-dropdown__item-label {
+  font-weight: 600;
+}
+
+.st-dropdown__item-description {
+  color: var(--st-ink-muted);
+  font-size: 0.88rem;
+}
+
+.st-dropdown--brand .st-dropdown__chevron {
+  color: var(--st-brand);
+}
+
+.st-dropdown--accent .st-dropdown__chevron {
+  color: var(--st-accent);
+}
+
+.st-dropdown--neutral .st-dropdown__chevron {
+  color: var(--st-neutral);
+}

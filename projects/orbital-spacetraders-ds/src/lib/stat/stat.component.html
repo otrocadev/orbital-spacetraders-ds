@@ -1,0 +1,6 @@
+<div [class]="'st-stat st-stat--' + size() + ' st-stat--' + tone()">
+  @if (label()) {
+    <span class="st-stat__label">{{ label() }}</span>
+  }
+  <span class="st-stat__value">{{ value() }}</span>
+</div>

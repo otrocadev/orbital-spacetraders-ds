@@ -1,0 +1,31 @@
+<div [class]="classes()">
+  <button
+    type="button"
+    class="st-dropdown__trigger"
+    [attr.aria-expanded]="open()"
+    aria-haspopup="menu"
+    (click)="toggle()"
+  >
+    <span class="st-dropdown__label">{{ triggerLabel() }}</span>
+    <span class="st-dropdown__summary">{{ triggerSummary() }}</span>
+    <span class="st-dropdown__chevron" aria-hidden="true">⌄</span>
+  </button>
+
+  @if (open()) {
+    <div class="st-dropdown__menu" role="menu">
+      @for (item of items(); track item.value) {
+        <button
+          type="button"
+          class="st-dropdown__item"
+          role="menuitem"
+          (click)="selectItem(item.value)"
+        >
+          <span class="st-dropdown__item-label">{{ item.label }}</span>
+          @if (item.description) {
+            <span class="st-dropdown__item-description">{{ item.description }}</span>
+          }
+        </button>
+      }
+    </div>
+  }
+</div>

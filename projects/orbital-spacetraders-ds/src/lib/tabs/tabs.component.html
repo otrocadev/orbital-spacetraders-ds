@@ -1,0 +1,21 @@
+<div class="st-tabs">
+  <div class="st-tabs__header">
+    @for (tab of tabs; track tab; let i = $index) {
+      <button
+        type="button"
+        class="st-tabs__trigger"
+        [class.st-tabs__trigger--active]="activeIndex() === i"
+        (click)="selectTab(i)"
+      >
+        @if (tab.icon()) {
+          <span class="st-tabs__icon">{{ tab.icon() }}</span>
+        }
+        <span class="st-tabs__label">{{ tab.label() }}</span>
+      </button>
+    }
+  </div>
+
+  <div class="st-tabs__content">
+    <ng-content></ng-content>
+  </div>
+</div>

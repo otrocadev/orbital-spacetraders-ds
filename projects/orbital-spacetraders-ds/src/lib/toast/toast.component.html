@@ -1,0 +1,8 @@
+@if (open()) {
+  <div [class]="toastClasses()" role="status" aria-live="polite">
+    <span class="st-toast__message">{{ message() }}</span>
+    <button type="button" class="st-toast__close" aria-label="Dismiss" (click)="dismiss()">
+      ✕
+    </button>
+  </div>
+}
